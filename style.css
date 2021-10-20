@@ -82,7 +82,13 @@ p {
 }
 
 @media screen and (max-width: 768px) {
-    .result {
+    .weight-result {
         margin-top: 0px;
+    }
+    .img {
+        height: 300px;
+    }
+    .input-weight {
+        width: 90%;
     }
 }
