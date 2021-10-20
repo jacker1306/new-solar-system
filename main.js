@@ -4,7 +4,7 @@ var app = new Vue ({
         unit: "",
         planet: "this planet",
         weight: 0,
-        object: "your object",
+        object: "",
     },
     methods: {
         convert() {
@@ -19,7 +19,8 @@ var app = new Vue ({
                 Saturn : 1.06,
                 Neptune : 1.19,
             };
-            this.weight = Math.round(this.weight * convertValues[this.planet]*100/100);
+            var objectWeight = parseFloat(this.$refs.weight.value);
+            this.weight = Math.round(objectWeight * convertValues[this.planet]*100)/100;
         }
     }
 })
