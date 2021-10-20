@@ -12,17 +12,18 @@
     <div id="app">
         <h1>CALCULATE THE WEIGHT OF AN OBJECT ON A PLANET</h1>
         <div class="input-weight">
-            <input type="text" name="object" id="" v-model="object">
-            <input v-model.number="weight" type="number" step="0.1" placeholder="Please input weight">
+            <input type="text" name="object" id="" v-model="object" placeholder="Your Object">
+            <input class="object-weight" ref="weight" type="number" step="0.1" placeholder="Input weight">
             <div class="select-unit">
                 <select name="unit" id="" v-model="unit">
+                    <option value="" disabled>Select unit</option>
                     <option value="kg">Kilograms</option>
                     <option value="lbs">Pounds</option>
                 </select>
             </div>
             <div class="select-planet">
                 <select name="planet" id="" v-model="planet">
-                    <option value="Alien">Please select a planet</option>
+                    <option value="this planet" disabled>Please select a planet</option>
                     <option value="Earth">Earth</option>
                     <option value="Jupiter">Jupiter</option>
                     <option value="Mars">Mars</option>
@@ -41,8 +42,8 @@
                 <img v-bind:src="'/images/' + planet +'.png'" alt="">
             </div>
             <div class="weight-result">
-                <h2>The weight of {{object}} on {{planet}} is</h2>
-                <p>{{weight}} <span>{{unit}}</span> </p>
+                <h2>The weight of {{object}} on {{planet}} is
+                {{weight}} {{unit}}</h2>
             </div>
         </div>
     </div>
