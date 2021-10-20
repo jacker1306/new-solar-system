@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <title>Solar System Weight Calculator</title>
+</head>
+<body>
+    <div id="app">
+        <h1>CALCULATE THE WEIGHT OF AN OBJECT ON A PLANET</h1>
+        <div class="input-weight">
+            <input type="text" name="object" id="" v-model="object">
+            <input v-model.number="weight" type="number" step="0.1" placeholder="Please input weight">
+            <div class="select-unit">
+                <select name="unit" id="" v-model="unit">
+                    <option value="kg">Kilograms</option>
+                    <option value="lbs">Pounds</option>
+                </select>
+            </div>
+            <div class="select-planet">
+                <select name="planet" id="" v-model="planet">
+                    <option value="Alien">Please select a planet</option>
+                    <option value="Earth">Earth</option>
+                    <option value="Jupiter">Jupiter</option>
+                    <option value="Mars">Mars</option>
+                    <option value="Mercury">Mercury</option>
+                    <option value="Neptune">Neptune</option>
+                    <option value="Pluto">Pluto</option>
+                    <option value="Saturn">Saturn</option>
+                    <option value="Uranus">Uranus</option>
+                    <option value="Venus">Venus</option>
+                </select>
+            </div>
+            <button @click="convert()">CALCULATE </button>
+        </div>
+        <div class="result">
+            <div class="img">
+                <img v-bind:src="'/images/' + planet +'.png'" alt="">
+            </div>
+            <div class="weight-result">
+                <h2>The weight of {{object}} on {{planet}} is</h2>
+                <p>{{weight}} <span>{{unit}}</span> </p>
+            </div>
+        </div>
+    </div>
+    <script src="/main.js"></script>
+</body>
+</html>
